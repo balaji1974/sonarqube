@@ -35,15 +35,41 @@ Branch Name: **The Git branch you are analyzing**
 6. Token name: **leave it to default**   
 7. Expires in: 30 days **leave it to default** # later based on your project setup adjust this value   
 8. Generate and copy the token  
+9. For maven project click the maven tab and you wil get something like below:
+```
+mvn clean verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar \
+  -Dsonar.projectKey=sonar-demo \
+  -Dsonar.projectName='Sonar Demo' \
+  -Dsonar.host.url=http://localhost:9000 \
+  -Dsonar.token=<your token>
+
+```
+10. This can be copied and used directly to run the project
 
 > Note: Two things that will be used from this step are the project key and token to be used later  
 
 
 ## Adding sonarqube to Springboot Maven Project
+1. Create a springboot maven project (ref. sonar-demo)
+2. In the pom.xml file add the following under properties and plugin sections:   
+```
+<!-- Connection Details -->
+<sonar.host.url>http://localhost:9000</sonar.host.url>
+<!-- Use a token for authentication (recommended) -->
+<sonar.token>Your token that your copied</sonar.token>
+<!-- Project Details (optional, often automatically detected) -->
+<sonar.projectKey>Your project key that you copied</sonar.projectKey>
 
-Add properties 
-Add plugin
-mvn clean install sonar:sonar
+<plugin>
+    <groupId>org.sonarsource.scanner.maven</groupId>
+    <artifactId>sonar-maven-plugin</artifactId>
+    <version>5.5.0.6356</version>
+</plugin>
+
+```
+3. Run the maven project by running the following command:  
+mvn clean install sonar:sonar  
+
 
 
 ### References:
