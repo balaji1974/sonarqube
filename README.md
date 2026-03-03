@@ -70,12 +70,64 @@ mvn clean verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar \
 3. Run the maven project by running the following command:  
 mvn clean install sonar:sonar  
 
+## Looking at the collected metrics 
+1. Login to the sonarqube dashboard
+2. Click on your project
+3. Look on all the tabs and view the metrics
+4. Any issues reported must be fixed and rerun to recollect the metrics again for analysis.
+
+## Adding test coverage on Springboot projects
+1. Add the following to the pom.xml file
+`<sonar.exclusions>**/SonarDemoApplication.java</sonar.exclusions>`
+> Reason: Better architectural choice
+> ✔ Don’t artificially test bootstrap code
+> ✔ Focus on controllers, services, business logic
+
+2. Add the following maven plugin in pom.xml
+```
+<plugin>
+  <groupId>org.jacoco</groupId>
+ <artifactId>jacoco-maven-plugin</artifactId>
+  <version>0.8.7</version>
+  <executions>
+    <execution>
+      <id>prepare-agent</id>
+      <goals>
+        <goal>prepare-agent</goal>
+      </goals>
+    </execution>
+    <execution>
+      <id>report</id>
+      <goals>
+        <goal>report</goal>
+      </goals>
+      <configuration>
+        <formats>
+          <format>XML</format>
+        </formats>
+      </configuration>
+    </execution>
+  </executions>
+</plugin>
+```
+3. Run 
+`mvn clean verify`
+
+The test coverage report is generated on  
+target/site/jacoco/index.html  
+
+4. Now run the project as before   
+mvn clean install sonar:sonar  
+
+5. Check the coverage on the sonarqube dashboard (ideal above 80%)
 
 
 ### References:
 ProgrammingKnowledge. (2024, January 29).   
 How To Sonarqube Setup From Scratch And Code Analysis [Video].  
-YouTube. https://www.youtube.com/watch?v=6vdRvz_LnbQ 
+YouTube. https://www.youtube.com/watch?v=6vdRvz_LnbQ  
 
-
+SpringBootSimplified. (2022, December 30).   
+SonarQube Integration with Spring Boot | SonarQube + Spring Boot Tutorial [Video].   
+YouTube. https://www.youtube.com/watch?v=_5FU-GnICxY  
 
