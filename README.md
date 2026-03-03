@@ -20,7 +20,7 @@ Password: admin (must be changed on first login)
 ## Create your project
 1. Login to sonarqube dashboard  
 2. Create a local project and enter the below details:  
-Project display name: **Human-readable name shown in SonarQube UI** 
+Project display name: **Human-readable name shown in SonarQube UI**  
 Project Key: **A unique identifier for your project inside SonarQube** # copy this  
 Branch Name: **The Git branch you are analyzing**  
 
@@ -32,8 +32,8 @@ Branch Name: **The Git branch you are analyzing**
 3. Next select 'Is Custom' and no. of days 30 (leave it as this default)  
 4. Click create project  
 5. Click locally  
-6. Token name: <leave it to default>  
-7. Expires in: 30 days <leave it to default> # later based on your project setup adjust this value   
+6. Token name: **leave it to default**   
+7. Expires in: 30 days **leave it to default** # later based on your project setup adjust this value   
 8. Generate and copy the token  
 
 > Note: Two things that will be used from this step are the project key and token to be used later  
