@@ -20,9 +20,9 @@ Password: admin (must be changed on first login)
 ## Create your project
 1. Login to sonarqube dashboard  
 2. Create a local project and enter the below details:  
-Project display name: <Human-readable name shown in SonarQube UI>  
-Project Key: <A unique identifier for your project inside SonarQube> # copy this  
-Branch Name: <The Git branch you are analyzing>  
+Project display name: **Human-readable name shown in SonarQube UI** 
+Project Key: **A unique identifier for your project inside SonarQube** # copy this  
+Branch Name: **The Git branch you are analyzing**  
 
 > Example:    
 * Project Display Name: Sonar Demo  
