@@ -124,7 +124,11 @@ target/site/jacoco/index.html
 
 ## Sonarqube MCP Server
 To add later....   
-https://github.com/SonarSource/sonarqube-mcp-server
+https://github.com/SonarSource/sonarqube-mcp-server  
+
+and also  
+Jovanović, M. (2024). The secret to shipping safe code with AI: SonarQube MCP server [Video].  
+YouTube. https://www.youtube.com/watch?v=NuD0BbnECkg  
 
 
 ### References:
