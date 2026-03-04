@@ -117,9 +117,14 @@ The test coverage report is generated on
 target/site/jacoco/index.html  
 
 4. Now run the project as before   
-mvn clean install sonar:sonar  
+`mvn clean install sonar:sonar`
 
 5. Check the coverage on the sonarqube dashboard (ideal above 80%)
+
+
+## Sonarqube MCP Server
+To add later....   
+https://github.com/SonarSource/sonarqube-mcp-server
 
 
 ### References:
