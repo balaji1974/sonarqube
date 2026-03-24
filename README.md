@@ -79,9 +79,9 @@ mvn clean install sonar:sonar
 ## Adding test coverage on Springboot projects
 1. Add the following to the pom.xml file
 `<sonar.exclusions>**/SonarDemoApplication.java</sonar.exclusions>`
-> Reason: Better architectural choice
-> ✔ Don’t artificially test bootstrap code
-> ✔ Focus on controllers, services, business logic
+* Reason: Better architectural choice
+  * ✔ Don’t artificially test bootstrap code
+  * ✔ Focus on controllers, services, business logic
 
 2. Add the following maven plugin in pom.xml
 ```
